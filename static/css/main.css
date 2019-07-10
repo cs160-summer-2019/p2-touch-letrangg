@@ -156,3 +156,30 @@ table {
     background-color: #f1f1f1;
     border: 1px solid #0d124a11;
 }
+
+.rotated {
+  transform: rotate(90deg);
+}
+
+.pinched {
+  transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+.pressed {
+  transition: background-color 0.5s ease;
+  background-color: pink;
+}
+
+.panned {
+  transform: translate(3em,0);
+}
+
+.tapped {
+  background-color: red;
+}
+
+.swiped {
+  transform: translate(3em,0);
+  transform: translate(-3em,0);
+  transition: background-color 0.5s ease;
+}

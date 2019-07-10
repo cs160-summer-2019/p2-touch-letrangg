@@ -85,6 +85,44 @@
 	</div>
 	<script>
 	  // your solution here
+    //var tapBox = document.getElementById('tap-box');
+    //Hammer(tapBox).on("tap", function(event) {alert("tap!");});
+    
+    var rotateBox = document.getElementById('rotate-box');
+    var hammerRotate = new Hammer(rotateBox);
+    //enable rotation
+    hammerRotate.get('rotate').set({enable: true});
+    hammerRotate.on('rotate', function(event) {$("#rotate-box").addClass('rotated');});
+    
+    var pinchBox = document.getElementById('pinch-box');
+    var hammerPinch = new Hammer(pinchBox);
+    hammerPinch.get('pinch').set({ enable: true });
+    hammerPinch.on('pinch', function(event) {$("#pinch-box").addClass('pinched');});
+    
+    //var pinchBox = document.getElementById('')
+    var pressBox = document.getElementById('press-box');
+    var hammerPress = new Hammer(pressBox);
+    hammerPress.on('press', function(event) {alert("pressed!"); $("#press-box").addClass('pressed');});
+    
+    var panBox = document.getElementById('pan-box');
+    var hammerPan = new Hammer(panBox);
+    hammerPan.on('pan', function(event) {$("#pan-box").addClass('panned');});
+    
+    var tapBox = document.getElementById('tap-box');
+    var hammerTap = new Hammer(tapBox);
+    hammerTap.on('tap', function(event) {alert("tapped!");});
+    
+    var swipeBox = document.getElementById('swipe-box');
+    var hammerSwipe = new Hammer(swipeBox);
+    hammerSwipe.on('swipe', function(event) {
+      event.preventDefault();
+      $('#swipe-box').animate({
+      opacity: 0.25,
+      left: '+=50',
+      height: 'toggle'
+     }, 6000, function() {
+       });
+      });
   </script>
 </body>
 </html>
