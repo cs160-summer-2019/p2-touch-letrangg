@@ -110,7 +110,7 @@
     
     var tapBox = document.getElementById('tap-box');
     var hammerTap = new Hammer(tapBox);
-    hammerTap.on('tap', function(event) {alert("tapped!");});
+    hammerTap.on('tap', function(event) {document.getElementById.('press-box').style.backgroundColor = "#F8BBED";});
     
     var swipeBox = document.getElementById('swipe-box');
     var hammerSwipe = new Hammer(swipeBox);
